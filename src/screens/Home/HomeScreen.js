@@ -1,43 +1,56 @@
-import React, { useLayoutEffect } from "react";
-import { FlatList, Text, View, TouchableHighlight, Image } from "react-native";
+import React from "react";
+import { Text, View, Image, TouchableOpacity } from "react-native";
 import styles from "./styles";
-import { recipes } from "../../data/dataArrays";
-import MenuImage from "../../components/MenuImage/MenuImage";
-import { getCategoryName } from "../../data/MockDataAPI";
+import Kimisagara from '../../components/Logo/kimisagara'
+import Logo1 from '../../components/Logo/Logo1'
+import Logo2 from '../../components/Logo/Logo2'
 
 export default function HomeScreen(props) {
   const { navigation } = props;
 
-  useLayoutEffect(() => {
-    navigation.setOptions({
-      headerLeft: () => (
-        <MenuImage
-          onPress={() => {
-            navigation.openDrawer();
-          }}
-        />
-      ),
-      headerRight: () => <View />,
-    });
-  }, []);
-
-  const onPressRecipe = (item) => {
-    navigation.navigate("Recipe", { item });
-  };
-
-  const renderRecipes = ({ item }) => (
-    <TouchableHighlight underlayColor="rgba(73,182,77,0.9)" onPress={() => onPressRecipe(item)}>
-      <View style={styles.container}>
-        <Image style={styles.photo} source={{ uri: item.photo_url }} />
-        <Text style={styles.title}>{item.title}</Text>
-        <Text style={styles.category}>{getCategoryName(item.categoryId)}</Text>
-      </View>
-    </TouchableHighlight>
-  );
 
   return (
-    <View>
-      <FlatList vertical showsVerticalScrollIndicator={false} numColumns={2} data={recipes} renderItem={renderRecipes} keyExtractor={(item) => `${item.recipeId}`} />
+    <View style={styles.b1}>
+      <View style={styles.b2}>
+        <View style={styles.b3}>
+          <View style={{ flexShrink: 1, flexDirection: 'row', justifyContent: 'center', alignItems: 'center', marginTop: 30, }} > 
+            <View style={{ marginRight: 5}}><Logo1 /></View>
+            <View style={{ alignItems: 'center' }} >
+            <Text style={styles.title}>Umugi wa Kigali</Text>
+            <Text style={styles.title}>Umurenge wa Kimisagara</Text>
+          </View>
+            <View style={{ marginLeft: 5}}><Logo2 /></View>
+          </View>
+
+          <View style={{ marginLeft: 5, marginRight: 5}}><Kimisagara /></View>
+          
+          <View style={{ flexShrink: 1, flexDirection: 'row', justifyContent: 'center', alignItems: 'center', marginTop: 20 }} > 
+            <View style={{ flexShrink: 1, marginLeft: -30, marginRight: 20  }} >
+              <TouchableOpacity style={{fontSize: 20}} onPress={()=> {
+               navigation.navigate("Login");
+                 }
+                }>
+                <Text style={{fontSize: 20, marginLeft: -5, marginBottom: 20}}> kwinjira </Text>
+              </TouchableOpacity> 
+              <Text style={{fontSize: 20, marginBottom: 20}}>Igwingira</Text>
+              <Text style={{fontSize: 20}}>Isuku</Text>
+            </View>
+
+            <View style={{ flexShrink: 1 }} > 
+              <Text style={{fontSize: 20, marginBottom: 20}}> Musa </Text>
+              <Text style={{fontSize: 20, marginBottom: 20}}> Ejo heza</Text>
+              <Text style={{fontSize: 20}}> Umutekano</Text>
+            </View>
+          </View>
+
+          <View style={{ justifyContent: 'center', alignItems: 'center', flexShrink: 1, width: '100%', marginTop: 20 }} > 
+            <View style={{ backgroundColor: 'rgba(11,156,49,0.8)', justifyContent: 'center', alignItems: 'center', flexShrink: 1, width: '90%', alignItems: 'center', padding: 10 }} > 
+              <Text style={{ color: 'white', fontSize: 15, fontStyle: 'italic'}}> DUHARANIRE KIMISAGARA IKEYE </Text>
+              <Text style={{ color: 'white', fontSize: 15, fontStyle: 'italic'}}> KANDI IZIRA IGWINGIRA </Text>
+            </View>
+          </View>
+        </View>
+      </View>
     </View>
   );
 }
