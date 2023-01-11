@@ -1,23 +1,26 @@
 {
   "files": {
-    "app.js": "/static/js/app.6345f258.chunk.js",
-    "app.js.map": "/static/js/app.6345f258.chunk.js.map",
+    "app.js": "/static/js/app.03a6d7ee.chunk.js",
+    "app.js.map": "/static/js/app.03a6d7ee.chunk.js.map",
     "runtime~app.js": "/static/js/runtime~app.27401809.js",
     "runtime~app.js.map": "/static/js/runtime~app.27401809.js.map",
-    "static/js/2.852f747e.chunk.js": "/static/js/2.852f747e.chunk.js",
-    "static/js/2.852f747e.chunk.js.map": "/static/js/2.852f747e.chunk.js.map",
+    "static/js/2.1a86fd32.chunk.js": "/static/js/2.1a86fd32.chunk.js",
+    "static/js/2.1a86fd32.chunk.js.map": "/static/js/2.1a86fd32.chunk.js.map",
     "fonts/MaterialCommunityIcons.ttf": "/./fonts/MaterialCommunityIcons.ttf",
+    "favicon-16.png": "/favicon-16.png",
+    "favicon-32.png": "/favicon-32.png",
+    "favicon.ico": "/favicon.ico",
     "index.html": "/index.html",
     "manifest.json": "/manifest.json",
     "serve.json": "/serve.json",
-    "static/js/2.852f747e.chunk.js.LICENSE.txt": "/static/js/2.852f747e.chunk.js.LICENSE.txt",
+    "static/js/2.1a86fd32.chunk.js.LICENSE.txt": "/static/js/2.1a86fd32.chunk.js.LICENSE.txt",
     "static/media/kimisagara.jpeg": "/static/media/kimisagara.c70b2bf3.jpeg",
     "static/media/logo1.jpg": "/static/media/logo1.75f17892.jpg",
     "static/media/logo2.jpeg": "/static/media/logo2.c1c8d4c3.jpeg"
   },
   "entrypoints": [
     "static/js/runtime~app.27401809.js",
-    "static/js/2.852f747e.chunk.js",
-    "static/js/app.6345f258.chunk.js"
+    "static/js/2.1a86fd32.chunk.js",
+    "static/js/app.03a6d7ee.chunk.js"
   ]
 }

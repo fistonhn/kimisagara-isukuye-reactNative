@@ -54,6 +54,7 @@ const pickImage = async ()=>{
   }
 
   const handleUpload = (image) => {
+    setLoading(true);
     const data = new FormData();
     data.append('upload_preset', 'kimisagara');
     data.append('cloud_name','ddzlnjnsf');
@@ -69,10 +70,13 @@ const pickImage = async ()=>{
       body:data
     })
     .then(res=>res.json())
-    .then(data=>
+    .then(data=> {
       setImageUrl(data.secure_url)
+      setLoading(false)
+      }
       );
-  }  
+  }
+  
 
   const onPostPressed = async() => {
 

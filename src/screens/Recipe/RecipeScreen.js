@@ -48,7 +48,7 @@ export default function RecipeScreen(props) {
                 style={styles.infoPhoto}
                 source={require("../../../assets/icons/time.png")}
               />
-              <Text style={styles.infoRecipe}>{moment(item?.createdAt).startOf('hour').fromNow()} minutes </Text>
+              <Text style={styles.infoRecipe}>{moment(item?.createdAt).startOf('minute').fromNow()} </Text>
           </View>
           <View style={styles.infoContainer}>
             <Text style={{fontSize: 14, marginLeft: 10}}>{item?.cell} / {item?.village}</Text>
