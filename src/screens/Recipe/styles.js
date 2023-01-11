@@ -28,7 +28,7 @@ const styles = StyleSheet.create({
     position: 'absolute',
     alignSelf: 'center',
     paddingVertical: 8,
-    marginTop: 200
+    // marginTop: 200
   },
   paginationDot: {
     width: 8,
@@ -39,7 +39,7 @@ const styles = StyleSheet.create({
   infoRecipeContainer: {
     flex: 1,
     margin: 25,
-    marginTop: 20,
+    // marginTop: 20,
     justifyContent: 'center',
     alignItems: 'center'
   },
@@ -48,6 +48,7 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'flex-start',
+    marginLeft: 10
   },
   buttonContainer: {
     flex: 1,
@@ -58,7 +59,7 @@ const styles = StyleSheet.create({
   infoPhoto: {
     height: 20,
     width: 20,
-    marginRight: 0
+    marginLeft: 10
   },
   infoRecipe: {
     fontSize: 14,
@@ -74,7 +75,7 @@ const styles = StyleSheet.create({
   infoDescriptionRecipe: {
     textAlign: 'left',
     fontSize: 16,
-    marginTop: 30,
+    // marginTop: 30,
     margin: 15
   },
   infoRecipeName: {

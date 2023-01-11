@@ -1,7 +1,7 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { View, StyleSheet, TouchableOpacity } from 'react-native'
+import Spinner from 'react-native-loading-spinner-overlay';
 import { Text } from 'react-native-paper'
-
 import Logo1 from '../../components/Logo/Logo1'
 import Logo2 from '../../components/Logo/Logo2'
 
@@ -16,7 +16,21 @@ export default function RegisterScreen({ navigation }) {
   const [email, setEmail] = useState({ value: '', error: '' })
   const [password, setPassword] = useState({ value: '', error: '' })
 
-  const onSignUpPressed = () => {
+  const [successMessage, setSuccessMessage] = useState(null)
+  const [errorMessage, setErrorMessage] = useState(null)
+  const [loading, setLoading] = useState(false);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setSuccessMessage(null)
+      setErrorMessage(null)
+    }, 4000)
+    return () => clearTimeout(timer)
+  })
+
+
+  const onSignUpPressed = async () => {
+
     const nameError = nameValidator(name.value)
     const emailError = emailValidator(email.value)
     const passwordError = passwordValidator(password.value)
@@ -26,21 +40,61 @@ export default function RegisterScreen({ navigation }) {
       setPassword({ ...password, error: passwordError })
       return
     }
-    navigation.reset({
-      index: 0,
-      routes: [{ name: 'Dashboard' }],
-    })
+    try {
+      setLoading(true);
+
+      const newData = JSON.stringify({
+          names: name.value,
+          number: email.value,
+          password: password.value,
+      })
+
+      await fetch('https://kimisagara-isukuye.vercel.app/api/signup', {
+        method: 'POST',
+        headers: {
+            'Accept': 'application/json',
+            'Content-Type': 'application/json'
+        },
+        body: newData
+    }).then((response) => response.json())
+      .then((responseData) => {
+        if(responseData.status === 200) {
+          setLoading(false);
+          setSuccessMessage(responseData.message)
+
+          setTimeout(() => { navigation.replace('Login') }, 4000)
+        } else {
+          setLoading(false);
+          setErrorMessage(responseData.error)
+        }
+      })
+
+  } catch (error) { 
+    setLoading(false);
+    setErrorMessage(error.error) 
+  }
+
   }
 
   return (
     <View>
     <View style={{ margin: 30}}>
+        <Spinner
+          visible={loading}
+          textContent={'Tegereza...'}
+          textStyle={{color: '#FFF'}}
+        />
       <View style={{ flexShrink: 1, flexDirection: 'row', justifyContent: 'center', alignItems: 'center' }} > 
         <View style={{ marginRight: 30}}><Logo1 /></View>
         <View style={{ marginLeft: 30}}><Logo2 /></View>
       </View>
       <View style={{ fontSize: 30, justifyContent: 'center', alignItems: 'center'}}>
         <Text style={{ fontSize: 25 }}>Iyandikishe</Text>
+
+        {successMessage && (<Text style={{ fontSize: 17, backgroundColor: '#4BB543', color: 'white', padding: 5 }}>{successMessage}</Text>)}
+        {errorMessage &&(<Text style={{ fontSize: 20, backgroundColor: 'red', color: 'white', padding: 5 }}>{errorMessage}</Text>)}
+
+
       </View>
       <TextInput
         label="Andika hano Amazina yawe"
@@ -60,7 +114,7 @@ export default function RegisterScreen({ navigation }) {
         autoCapitalize="none"
         autoCompleteType="email"
         textContentType="emailAddress"
-        keyboardType="email-address"
+        keyboardType = "number-pad"
       />
       <TextInput
         label="Andika hano umubare wibanga"

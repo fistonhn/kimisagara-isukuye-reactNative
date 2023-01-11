@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "Instafood",
-    "slug": "instafood-recipes-app",
+    "name": "Umurenge wa Kimisagara",
+    "slug": "Umurenge-wa-Kimisagara",
     "description": "React Native Recipes App Demo. Download source code for free at https://www.instamobile.io . You can also check out the Swift version at https://www.iosapptemplates.com and the Kotlin version at https://www.instakotlin.com .",
     "privacy": "public",
     "version": "1.0.0",
@@ -26,20 +26,27 @@
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#FFFFFF"
-      }
+      },
+      "permissions": [
+        "android.permission.RECORD_AUDIO"
+      ],
+      "package": "com.fistonhn.UmurengewaKimisagara"
     },
     "web": {
       "favicon": "./assets/favicon.png"
     },
-    "expo": {
-      "plugins": [
-        [
-          "expo-image-picker",
-          {
-            "photosPermission": "The app accesses your photos to let you share them with your friends."
-          }
-        ]
+    "plugins": [
+      [
+        "expo-image-picker",
+        {
+          "photosPermission": "The app accesses your photos to let you share them with your friends."
+        }
       ]
+    ],
+    "extra": {
+      "eas": {
+        "projectId": "710dee7c-6b06-403f-b5e7-e1b49884962e"
+      }
     }
   }
 }
