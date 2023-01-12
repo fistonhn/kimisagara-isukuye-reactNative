@@ -14,7 +14,7 @@ import { cellValidator } from '../../helpers/cellValidator'
 import { villageValidator } from '../../helpers/villageValidator'
 
 
-export default function RegisterScreen({ navigation }) {
+export default function AddPostScreen() {
   const [title, setTitle] = useState({ value: '', error: '' })
   const [description, setDescription] = useState({ value: '', error: '' })
   const [village, setVillage] = useState({ value: '', error: '' })
@@ -59,7 +59,7 @@ const pickImage = async ()=>{
     data.append('upload_preset', 'kimisagara');
     data.append('cloud_name','ddzlnjnsf');
 
-    data.append('file',image);
+    data.append('file', image);
     fetch("https://api.cloudinary.com/v1_1/ddzlnjnsf/image/upload",{  
       method:'post', 
       headers: {
@@ -71,7 +71,7 @@ const pickImage = async ()=>{
     })
     .then(res=>res.json())
     .then(data=> {
-      setImageUrl(data.secure_url)
+      setImageUrl(data)
       setLoading(false)
       }
       );
@@ -104,8 +104,8 @@ const pickImage = async ()=>{
         description: description.value,
         village: village.value,
         cell: cell.value,
-        photos: imageUrl,
-    })      
+        photos: imageUrl.secure_url,
+    })
 
     await fetch('https://kimisagara-isukuye.vercel.app/api/createPost', {
         method: 'POST',
@@ -122,7 +122,6 @@ const pickImage = async ()=>{
 
           setSuccessMessage(responseData.message);
           setLoading(false);
-
         } else {
           setErrorMessage(responseData.error)
           setLoading(false);
@@ -146,7 +145,7 @@ const pickImage = async ()=>{
           textStyle={{color: '#FFF'}}
         />
         <View style={{ fontSize: 30, justifyContent: 'center', alignItems: 'center'}}>
-            <Text style={{ fontSize: 25 }}>Shiramo Inkuru</Text>
+            <Text style={{ fontSize: 25 }}>Shiramo Inkuru!..</Text>
         </View>
         <TextInput
             label="Andika hano umutwe winkuru"

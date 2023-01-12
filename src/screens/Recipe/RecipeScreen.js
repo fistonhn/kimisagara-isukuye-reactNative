@@ -1,10 +1,9 @@
-import React, { useLayoutEffect, useRef, useState } from "react";
+import React, { useLayoutEffect } from "react";
 import {
   ScrollView,
   Text,
   View,
   Image,
-  TouchableHighlight,
 } from "react-native";
 import moment from 'moment';
 import styles from "./styles";
@@ -15,10 +14,6 @@ export default function RecipeScreen(props) {
   const { navigation, route } = props;
 
   const item = route.params;
-
-  const [activeSlide, setActiveSlide] = useState(0);
-
-  const slider1Ref = useRef();
 
   useLayoutEffect(() => {
     navigation.setOptions({

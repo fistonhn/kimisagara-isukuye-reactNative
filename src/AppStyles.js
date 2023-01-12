@@ -65,12 +65,11 @@ export const Landing = StyleSheet.create({
     borderColor: '#FAD201',
     borderWidth: 5,
     borderRadius: 45,
-    // justifyContent: 'center',
-    // alignItems: 'center',
     height: height - 100,
   title: {
     textAlign: 'center',
-    marginBottom: 20
+    marginBottom: 20,
+    color: '#00A1DE'
   },
   logo: {
     width: 200,

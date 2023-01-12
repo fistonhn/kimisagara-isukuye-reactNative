@@ -62,7 +62,7 @@ export default function RegisterScreen({ navigation }) {
           setLoading(false);
           setSuccessMessage(responseData.message)
 
-          setTimeout(() => { navigation.replace('Login') }, 4000)
+          setTimeout(() => { navigation.replace('Kwinjira') }, 4000)
         } else {
           setLoading(false);
           setErrorMessage(responseData.error)
@@ -134,7 +134,7 @@ export default function RegisterScreen({ navigation }) {
       </Button>
       <View style={styles.row}>
         <Text>Usanzwe wariyandikishije? </Text>
-        <TouchableOpacity onPress={() => navigation.replace('Login')}>
+        <TouchableOpacity onPress={() => navigation.replace('Kwinjira')}>
           <Text style={styles.link}>Kanda hano winjire</Text>
         </TouchableOpacity>
       </View>

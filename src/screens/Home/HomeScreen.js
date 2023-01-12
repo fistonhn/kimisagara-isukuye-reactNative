@@ -1,5 +1,5 @@
 import React from "react";
-import { Text, View, Image, TouchableOpacity } from "react-native";
+import { Text, View, TouchableOpacity } from "react-native";
 import styles from "./styles";
 import Kimisagara from '../../components/Logo/kimisagara'
 import Logo1 from '../../components/Logo/Logo1'
@@ -8,7 +8,6 @@ import Logo2 from '../../components/Logo/Logo2'
 export default function HomeScreen(props) {
   const { navigation } = props;
 
-
   return (
     <View style={styles.b1}>
       <View style={styles.b2}>
@@ -16,8 +15,9 @@ export default function HomeScreen(props) {
           <View style={{ flexShrink: 1, flexDirection: 'row', justifyContent: 'center', alignItems: 'center', marginTop: 30, }} > 
             <View style={{ marginRight: 5}}><Logo1 /></View>
             <View style={{ alignItems: 'center' }} >
-            <Text style={styles.title}>Umugi wa Kigali</Text>
-            <Text style={styles.title}>Umurenge wa Kimisagara</Text>
+            <Text style={{ textAlign: 'center', marginBottom: 5, color: '#00A1DE' }}>UMUGI WA KIGALI</Text>
+            <Text style={{ textAlign: 'center', marginBottom: 5, color: '#00A1DE' }}>AKARERE KA NYARUGENGE</Text>
+            <Text style={{ textAlign: 'center', marginBottom: 5, color: '#00A1DE' }}>UMURENGE WA KIMISAGARA</Text>
           </View>
             <View style={{ marginLeft: 5}}><Logo2 /></View>
           </View>
@@ -25,21 +25,35 @@ export default function HomeScreen(props) {
           <View style={{ marginLeft: 5, marginRight: 5}}><Kimisagara /></View>
           
           <View style={{ flexShrink: 1, flexDirection: 'row', justifyContent: 'center', alignItems: 'center', marginTop: 20 }} > 
-            <View style={{ flexShrink: 1, marginLeft: -30, marginRight: 20  }} >
-              <TouchableOpacity style={{fontSize: 20}} onPress={()=> {
-               navigation.navigate("Login");
+          
+            <View style={{ flexShrink: 1, marginRight: 20 }} >
+              <TouchableOpacity style={{fontSize: 20, }} onPress={()=> {
+               navigation.navigate("Kwinjira");
                  }
                 }>
-                <Text style={{fontSize: 20, marginLeft: -5, marginBottom: 20}}> kwinjira </Text>
+                <View style={{ borderColor: '#00A1DE', borderWidth: 2, padding: 10, marginBottom: 5}}>
+                  <Text style={{fontSize: 20, marginLeft: -5}}> kwinjira </Text>
+                </View>
               </TouchableOpacity> 
-              <Text style={{fontSize: 20, marginBottom: 20}}>Igwingira</Text>
-              <Text style={{fontSize: 20}}>Isuku</Text>
+              <View style={{ borderColor: '#00A1DE', borderWidth: 2, padding: 10, marginBottom: 5}}>
+                <Text style={{fontSize: 20 }}> Igwingira</Text>
+              </View>
+              <View style={{ borderColor: '#00A1DE', borderWidth: 2, padding: 10}}>
+                <Text style={{fontSize: 20}}>Isuku</Text>
+              </View>
+              
             </View>
 
-            <View style={{ flexShrink: 1 }} > 
-              <Text style={{fontSize: 20, marginBottom: 20}}> Musa </Text>
-              <Text style={{fontSize: 20, marginBottom: 20}}> Ejo heza</Text>
-              <Text style={{fontSize: 20}}> Umutekano</Text>
+            <View style={{ flexShrink: 1 }} >
+              <View style={{ borderColor: '#00A1DE', borderWidth: 2, padding: 10, marginBottom: 5}}> 
+                <Text style={{fontSize: 20}}> Musa </Text>
+              </View>
+              <View style={{ borderColor: '#00A1DE', borderWidth: 2, padding: 10, marginBottom: 5}}>
+                <Text style={{fontSize: 20}}> Ejo heza</Text>
+              </View>
+              <View style={{ borderColor: '#00A1DE', borderWidth: 2, padding: 10, marginBottom: 5}}>
+                <Text style={{fontSize: 20}}> Umutekano</Text>
+              </View>
             </View>
           </View>
 

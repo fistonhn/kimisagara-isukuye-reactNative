@@ -23,7 +23,13 @@ export default function LoginScreen( props ) {
 
   const [loading, setLoading] = useState(false);
 
+  const getToken = async() =>{
+    const token = await AsyncStorage.getItem('token')
+    if(token) {  return navigation.replace('Inkuru zose') }
+  }
+
   useEffect(() => {
+    getToken()
     const timer = setTimeout(() => {
       setErrorMessage(null)
     }, 4000)
@@ -61,7 +67,7 @@ export default function LoginScreen( props ) {
 
           setLoading(false);
           AsyncStorage.setItem('token', responseData.token)
-          navigation.replace('LandingScreen')
+          navigation.replace('Inkuru zose')
 
         } else if(responseData.status) {
           setLoading(false);

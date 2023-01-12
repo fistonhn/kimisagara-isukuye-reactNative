@@ -5,15 +5,11 @@ import {createDrawerNavigator} from '@react-navigation/drawer'
 
 import PostScreen from '../screens/Post/AddPost';
 import HomeScreen from '../screens/Home/HomeScreen';
-import CategoriesScreen from '../screens/Categories/CategoriesScreen';
 import RecipeScreen from '../screens/Recipe/RecipeScreen';
-import RecipesListScreen from '../screens/RecipesList/RecipesListScreen';
 import DrawerContainer from '../screens/DrawerContainer/DrawerContainer';
-import IngredientScreen from '../screens/Ingredient/IngredientScreen';
 import SearchScreen from '../screens/Search/SearchScreen';
 import Login from '../screens/Login/Login';
 import Signup from '../screens/Signup/Signup';
-import IngredientsDetailsScreen from '../screens/IngredientsDetails/IngredientsDetailsScreen';
 import LandingScreen from '../screens/LandingScreen/LandingScreen';
 
  const Stack = createStackNavigator();
@@ -30,18 +26,13 @@ function MainNavigator() {
           }
       }}
     >
-      <Stack.Screen name='Home' component={HomeScreen} />
-      <Stack.Screen name='Categories' component={CategoriesScreen}/>
-      <Stack.Screen name='LandingScreen' component={LandingScreen} />
+      <Stack.Screen name='Ahabanza' component={HomeScreen} />
+      <Stack.Screen name='Inkuru zose' component={LandingScreen} />
       <Stack.Screen name='Inkuru irambuye' component={RecipeScreen}/>
-      <Stack.Screen name='RecipesList' component={RecipesListScreen} />
-      <Stack.Screen name='Ingredient' component={IngredientScreen} />
       <Stack.Screen name='Search' component={SearchScreen} />
-      <Stack.Screen name='Login' component={Login} />
+      <Stack.Screen name='Kwinjira' component={Login} />
       <Stack.Screen name='Signup' component={Signup} />
-      <Stack.Screen name='Post' component={PostScreen} />
-
-      <Stack.Screen name='IngredientsDetails' component={IngredientsDetailsScreen} />
+      <Stack.Screen name='Andika inkuru' component={PostScreen} />
     </Stack.Navigator>
   )
 } 

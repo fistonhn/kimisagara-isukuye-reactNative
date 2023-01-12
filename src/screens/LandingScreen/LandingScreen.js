@@ -1,4 +1,4 @@
-import React, { useLayoutEffect, useState } from "react";
+import React, { useLayoutEffect, useState, useEffect } from "react";
 import AsyncStorage from '@react-native-async-storage/async-storage'
 
 import { FlatList, Text, View, TouchableHighlight, Image } from "react-native";
@@ -9,6 +9,15 @@ export default function LandingScreen(props) {
   const { navigation } = props;
   const [posts, setPosts] = useState(null);
 
+  const getToken = async() =>{
+    const token = await AsyncStorage.getItem('token')
+    if(!token) {  return navigation.replace('Kwinjira') }
+  }
+
+  useEffect(() => {
+    getToken()
+
+  })
 
   useLayoutEffect(() => {
     navigation.setOptions({
