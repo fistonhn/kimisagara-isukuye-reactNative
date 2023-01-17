@@ -19,7 +19,7 @@ export default function DrawerContainer(props) {
           title="ANDIKA INKURU"
           source={require("../../../assets/icons/add.png")}
           onPress={() => {
-            navigation.navigate("Andika inkuru");
+            navigation.navigate("Ibyiciro");
             navigation.closeDrawer();
           }}
         />

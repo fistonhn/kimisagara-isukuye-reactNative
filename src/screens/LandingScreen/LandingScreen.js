@@ -69,6 +69,11 @@ export default function LandingScreen(props) {
 
   return (
     <View>
+      {posts=== null &&(
+        <View style={{ justifyContent: 'center', alignItems: 'center' }}>
+          <Text>Tegereza ...</Text>
+        </View>
+      )}
       <FlatList vertical showsVerticalScrollIndicator={false} numColumns={2} data={orderedPosts} renderItem={renderPosts} keyExtractor={(item) => `${item.id}`} />
     </View>
   );

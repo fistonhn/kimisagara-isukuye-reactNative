@@ -11,6 +11,8 @@ import SearchScreen from '../screens/Search/SearchScreen';
 import Login from '../screens/Login/Login';
 import Signup from '../screens/Signup/Signup';
 import LandingScreen from '../screens/LandingScreen/LandingScreen';
+import CategoryScreen from '../screens/CategoryScreen/CategoryScreen';
+
 
  const Stack = createStackNavigator();
 
@@ -27,6 +29,7 @@ function MainNavigator() {
       }}
     >
       <Stack.Screen name='Ahabanza' component={HomeScreen} />
+      <Stack.Screen name='Ibyiciro' component={CategoryScreen} />
       <Stack.Screen name='Inkuru zose' component={LandingScreen} />
       <Stack.Screen name='Inkuru irambuye' component={RecipeScreen}/>
       <Stack.Screen name='Search' component={SearchScreen} />

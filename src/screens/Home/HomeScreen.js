@@ -24,45 +24,25 @@ export default function HomeScreen(props) {
 
           <View style={{ marginLeft: 5, marginRight: 5}}><Kimisagara /></View>
           
-          <View style={{ flexShrink: 1, flexDirection: 'row', justifyContent: 'center', alignItems: 'center', marginTop: 20 }} > 
-          
+          <View style={{ flexShrink: 1, flexDirection: 'row', justifyContent: 'center', alignItems: 'center', marginTop: 50 }} > 
             <View style={{ flexShrink: 1, marginRight: 20 }} >
-              <TouchableOpacity style={{fontSize: 20, }} onPress={()=> {
-               navigation.navigate("Kwinjira");
-                 }
-                }>
+              <TouchableOpacity style={{fontSize: 20, }} onPress={()=> { navigation.navigate("Kwinjira") }}>
                 <View style={{ borderColor: '#00A1DE', borderWidth: 2, padding: 10, marginBottom: 5}}>
                   <Text style={{fontSize: 20, marginLeft: -5}}> kwinjira </Text>
                 </View>
-              </TouchableOpacity> 
-              <View style={{ borderColor: '#00A1DE', borderWidth: 2, padding: 10, marginBottom: 5}}>
-                <Text style={{fontSize: 20 }}> Igwingira</Text>
-              </View>
-              <View style={{ borderColor: '#00A1DE', borderWidth: 2, padding: 10}}>
-                <Text style={{fontSize: 20}}>Isuku</Text>
-              </View>
-              
+              </TouchableOpacity>               
             </View>
+          </View>
 
-            <View style={{ flexShrink: 1 }} >
-              <View style={{ borderColor: '#00A1DE', borderWidth: 2, padding: 10, marginBottom: 5}}> 
-                <Text style={{fontSize: 20}}> Musa </Text>
-              </View>
-              <View style={{ borderColor: '#00A1DE', borderWidth: 2, padding: 10, marginBottom: 5}}>
-                <Text style={{fontSize: 20}}> Ejo heza</Text>
-              </View>
-              <View style={{ borderColor: '#00A1DE', borderWidth: 2, padding: 10, marginBottom: 5}}>
-                <Text style={{fontSize: 20}}> Umutekano</Text>
+          <View style={{position: 'absolute', bottom: 15, left: 5, right: 5}}>
+            <View style={{ justifyContent: 'center', alignItems: 'center', flexShrink: 1, width: '100%', marginTop: 20 }} > 
+              <View style={{ backgroundColor: 'rgba(11,156,49,0.8)', justifyContent: 'center', alignItems: 'center', flexShrink: 1, width: '90%', alignItems: 'center', padding: 10 }} > 
+                <Text style={{ color: 'white', fontSize: 15, fontStyle: 'italic'}}> DUHARANIRE KIMISAGARA IKEYE </Text>
+                <Text style={{ color: 'white', fontSize: 15, fontStyle: 'italic'}}> KANDI IZIRA IGWINGIRA </Text>
               </View>
             </View>
           </View>
 
-          <View style={{ justifyContent: 'center', alignItems: 'center', flexShrink: 1, width: '100%', marginTop: 20 }} > 
-            <View style={{ backgroundColor: 'rgba(11,156,49,0.8)', justifyContent: 'center', alignItems: 'center', flexShrink: 1, width: '90%', alignItems: 'center', padding: 10 }} > 
-              <Text style={{ color: 'white', fontSize: 15, fontStyle: 'italic'}}> DUHARANIRE KIMISAGARA IKEYE </Text>
-              <Text style={{ color: 'white', fontSize: 15, fontStyle: 'italic'}}> KANDI IZIRA IGWINGIRA </Text>
-            </View>
-          </View>
         </View>
       </View>
     </View>
