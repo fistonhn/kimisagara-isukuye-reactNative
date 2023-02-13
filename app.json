@@ -1,15 +1,15 @@
 {
   "expo": {
-    "name": "Umurenge wa Kimisagara",
+    "name": "Kimisagara Isukuye",
     "slug": "Umurenge-wa-Kimisagara",
-    "description": "React Native Recipes App Demo. Download source code for free at https://www.instamobile.io . You can also check out the Swift version at https://www.iosapptemplates.com and the Kotlin version at https://www.instakotlin.com .",
+    "description": "DUHARANIRE KIMISAGARA IKEYE KANDI IZIRA IGWINGIRA",
     "privacy": "public",
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./assets/icon.png",
+    "icon": "./assets/kimisagara-icon.png",
     "userInterfaceStyle": "light",
     "splash": {
-      "image": "./assets/splash.png",
+      "image": "./assets/kimisagara-icon.png",
       "resizeMode": "contain",
       "backgroundColor": "#ffffff"
     },
@@ -24,13 +24,14 @@
     },
     "android": {
       "adaptiveIcon": {
-        "foregroundImage": "./assets/adaptive-icon.png",
+        "foregroundImage": "./assets/kimisagara-icon.png",
         "backgroundColor": "#FFFFFF"
       },
       "permissions": [
         "android.permission.RECORD_AUDIO"
       ],
-      "package": "com.fistonhn.UmurengewaKimisagara"
+      "package": "com.kimisagara.isukuye",
+      "versionCode": 1
     },
     "web": {
       "favicon": "./assets/favicon.png"
